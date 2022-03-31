@@ -1,6 +1,6 @@
 from matplotlib import pyplot as plt
 import numpy as np
-import cv2
+# import cv2
 import os
 import argparse
 
@@ -76,7 +76,7 @@ def set_argparse():
     parser.add_argument('--blur', type=int, default=11,
                         help='blur for Canny algorithm (default: 11)')
     parser.add_argument('--scale', type=int, default=10,
-                        help='scale for image compress (scale: 10)')
+                        help='scale for image compress (default: 10)')
     parser.add_argument('--take', type=int, default=10,
                         help='how many images from sorted list to take (default: 10)')
     parser.add_argument('--dist', type=int, default=5,
