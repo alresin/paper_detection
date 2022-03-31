@@ -1,8 +1,8 @@
-from matplotlib import pyplot as plt
-import numpy as np
-# import cv2
 import os
 import argparse
+from matplotlib import pyplot as plt
+import numpy as np
+import cv2
 
 
 def optimize_contours(cnts, delta):
@@ -12,7 +12,8 @@ def optimize_contours(cnts, delta):
         for new_point in c:
             bad = False
             for prev_point in was:
-                if ((new_point[0][0] - prev_point[0][0])**2 + (new_point[0][1] - prev_point[0][1])**2)**0.5 < delta:
+                if ((new_point[0][0] - prev_point[0][0])**2 +
+                        (new_point[0][1] - prev_point[0][1])**2)**0.5 < delta:
                     bad = True
                     break
             if not bad:
@@ -52,8 +53,8 @@ def draw_edges(image_name, path='', thresholds=(40, 100), blur=11,
 
     if optimize:
         cnts = optimize_contours(cnts, delta)
-    
-    cnts = sorted(cnts, key = cv2.contourArea, reverse=True)[:take]
+
+    cnts = sorted(cnts, key=cv2.contourArea, reverse=True)[:take]
     paper_contour = get_best(cnts)
 
     cv2.drawContours(original, [paper_contour * scale], -1, (255, 0, 0), 15)
