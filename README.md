@@ -1,2 +1,2 @@
-# paper_detection
-Python script for paper detection on images 
+# Распознование листов бумаги на фото
+Представлен скрипт для командной строки, а так же Jupyter Notebook с объяснением методов работы данной программы.
